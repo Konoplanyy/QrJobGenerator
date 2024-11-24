@@ -1,6 +1,6 @@
 html, body {
-  -webkit-overflow-scrolling: touch;
-  overflow: auto;
+    overflow: hidden;
+    height: 100%;
 }
 
 body {
