@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Мій сайт">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="styles.css">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="scripts.js"></script>
+    
+    
+    <title>Мій сайт</title>
+</head>
+<body>
+    
+    <div class="modal" id="qrModal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <canvas id="qrCanvas"></canvas>
+            <p id="qrLabel"></p>
+            <button onclick="closeModal()">Закрити</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <ul id="qrList"></ul>
+        <input type="tel" inputmode="numeric" id="input" maxlength="4" placeholder="Введіть число" />
+        <button onclick="generateList()">Згенерувати</button>
+    </div>
+</body>
+</html>
