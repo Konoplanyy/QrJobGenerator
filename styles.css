@@ -14,6 +14,10 @@ body {
     height: 100vh;
     flex-direction: column-reverse; /* Зміщує елементи вниз */
     touch-action: manipulation
+    overflow-y: scroll; /* Разрешает видимость полосы прокрутки */
+    position: fixed; /* Запрещает прокрутку страницы */
+    width: 100%; /* Фиксирует ширину страницы */
+    top: calc(-1 * var(--scroll-position)); /* Запоминает место прокрутки */
 }
 .container {
     max-width: 600px;
