@@ -8,6 +8,9 @@ function generateList() {
     // Форматуємо число до 4 символів
     const formattedNumber = inputNumber.padStart(4, '0');
     
+    const qrLustLabel =document.getElementById('qrListLabel');
+    qrListLabel.innerHTML = "${inputNumber}"
+    
     const qrList = document.getElementById('qrList');
     qrList.innerHTML = ''; // очищення списку перед новою генерацією
 
