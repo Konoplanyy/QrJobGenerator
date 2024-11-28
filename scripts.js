@@ -9,7 +9,7 @@ function generateList() {
     const formattedNumber = inputNumber.padStart(4, '0');
     
     const qrLustLabel =document.getElementById('qrListLabel');
-    qrListLabel.innerHTML = "${inputNumber}"
+    qrListLabel.innerHTML = ʼ${inputNumber}ʼ
     
     const qrList = document.getElementById('qrList');
     qrList.innerHTML = ''; // очищення списку перед новою генерацією
