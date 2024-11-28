@@ -28,7 +28,7 @@ function generateList() {
 
 function createListItem(list, text, num1, num2) {
     const listItem = document.createElement('li');
-    listItem.textContent = `${num1} ${num2 || '16+'}`;
+    listItem.textContent = `${num2 || '16+'}`;
     listItem.onclick = () => openModal(text);
     list.appendChild(listItem);
 }
