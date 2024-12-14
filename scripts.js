@@ -1,3 +1,11 @@
+
+function toggleMenu() {
+    const menu = document.querySelector('.expandable-menu');
+    const button = document.getElementById('mainButton');
+    menu.classList.toggle('menu-active');
+    button.textContent = menu.classList.contains('menu-active') ? '-' : '+';
+}
+
 function generateList() {
     const inputNumber = document.getElementById('input').value;
     if (!inputNumber || isNaN(inputNumber)) {
@@ -5,27 +13,22 @@ function generateList() {
         return;
     }
 
-    // Форматуємо число до 4 символів
     const formattedNumber = inputNumber.padStart(4, '0');
-    
-    const qrLustLabel =document.getElementById('qrListLabel');
-    qrListLabel.innerHTML = `${inputNumber}`
-    
-    const qrList = document.getElementById('qrList');
-    qrList.innerHTML = ''; // очищення списку перед новою генерацією
+    const qrListLabel = document.getElementById('qrListLabel');
+    qrListLabel.innerHTML = `${inputNumber}`;
 
-    // Генерація 16 QR кодів із CRC
+    const qrList = document.getElementById('qrList');
+    qrList.innerHTML = '';
+
     for (let i = 1; i <= 16; i++) {
         const formattedNumber2 = i.toString().padStart(2, '0');
         const qrText = `TRC_${formattedNumber}_cell${formattedNumber2}`;
         createListItem(qrList, qrText, inputNumber, i);
     }
 
-    // Останній QR код
     const lastQRCodeText = `TRC_${formattedNumber}`;
     createListItem(qrList, lastQRCodeText, inputNumber);
 
-    // Очистка поля вводу після генерації
     document.getElementById('input').value = '';
 }
 
@@ -43,9 +46,8 @@ function openModal(text) {
 
     qrLabel.textContent = text;
 
-    // Генеруємо QR код із заданим текстом і розміром
     QRCode.toCanvas(qrCanvas, text, {
-        width: 300 // Розмір QR коду
+        width: 300
     }, function (error) {
         if (error) console.error(error);
     });

@@ -10,20 +10,26 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="styles.css">
 
-
     <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
     <script src="scripts.js"></script>
-    
-    
-    <title>Мій сайт</title>
+
+    <title>Albert Qr</title>
 </head>
 <body>
-    
+
+    <div class="expandable-menu">
+        <button class="menu-button" id="mainButton" onclick="toggleMenu()">+</button>
+        <div class="menu-items" id="menuItems">
+            <button onclick="openModal('27904411')">Kartička</button>
+            <button onclick="openModal('27841597')">Dárek Navíc</button>
+        </div>
+    </div>
+
     <div class="modal" id="qrModal" onclick="closeModal()">
         <div class="modal-content" onclick="event.stopPropagation()">
             <canvas id="qrCanvas"></canvas>
             <p id="qrLabel"></p>
-            <button onclick="closeModal()">Закрити</button>
+            <button class="button" onclick="closeModal()">Закрити</button>
         </div>
     </div>
 
@@ -31,7 +37,8 @@
         <h1 id="qrListLabel"></h1>
         <ul id="qrList"></ul>
         <input type="tel" inputmode="numeric" id="input" maxlength="4" placeholder="Введіть число" />
-        <button onclick="generateList()">Згенерувати</button>
+        <button class="button generate-button" onclick="generateList()">Згенерувати</button>
     </div>
+
 </body>
 </html>
